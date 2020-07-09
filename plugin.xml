@@ -22,14 +22,22 @@
                 <param name="ios-package" value="Diagnostic" />
             </feature>
         </config-file>
+
+        <preference name="CALENDARS_USAGE_DESCRIPTION"/>
+        <preference name="CAMERA_USAGE_DESCRIPTION"/>
+        <preference name="LOCATION_ALWAYS_AND_WHEN_IN_USE_DESCRIPTION"/>
+        <preference name="LOCATION_ALWAYS_USAGE_DESCRIPTION"/>
+        <preference name="LOCATION_WHEN_IN_USE_DESCRIPTION"/>
+        <preference name="MICROPHONE_USAGE_DESCRIPTION"/>
+        <preference name="PHOTO_LIBRARY_USAGE_DESCRIPTION"/> 
         
         <!-- Default usage descriptions: override as necessary in .plist -->
         <config-file target="*-Info.plist" parent="NSLocationAlwaysUsageDescription">
-            <string>This app requires constant access to your location in order to track your position, even when the screen is off.</string>
+            <string>$LOCATION_ALWAYS_USAGE_DESCRIPTION</string>
         </config-file>
         
         <config-file target="*-Info.plist" parent="NSLocationWhenInUseUsageDescription">
-            <string>This app requires access to your location when the screen is on and the app is displayed.</string>
+            <string>$LOCATION_ALWAYS_AND_WHEN_IN_USE_DESCRIPTION</string>
         </config-file>
         
         <config-file target="*-Info.plist" parent="NSCalendarsUsageDescription">
@@ -49,7 +57,7 @@
         </config-file>
 
         <config-file target="*-Info.plist" parent="NSCameraUsageDescription">
-            <string>This app requires camera access to function properly.</string>
+            <string>$CAMERA_USAGE_DESCRIPTION</string>
         </config-file>
 
         <config-file target="*-Info.plist" parent="NSMotionUsageDescription">
